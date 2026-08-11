@@ -1,0 +1,11 @@
+# Fins de ligne normalisees dans le depot, natives dans la copie de travail.
+* text=auto
+
+*.py   text diff=python
+*.json text
+*.md   text
+*.yml  text
+
+*.pdf  binary
+*.xlsx binary
+*.npz  binary

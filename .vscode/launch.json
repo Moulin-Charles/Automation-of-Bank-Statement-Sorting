@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Extraire un releve (choisir le PDF)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\extract_releve.py",
+      "args": ["${input:cheminPdf}"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Extraire le PDF ouvert dans l'editeur",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\extract_releve.py",
+      "args": ["${file}"],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "cheminPdf",
+      "type": "promptString",
+      "description": "Chemin du releve PDF",
+      "default": "${workspaceFolder}\\tests\\data\\releve_exemple.pdf"
+    }
+  ]
+}

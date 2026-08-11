@@ -1,0 +1,236 @@
+{
+ "_lisez_moi": [
+  "Releve de reference des tests : integralement invente.",
+  "Titulaire, adresse, numeros de compte, commercants et montants sont",
+  "fictifs ; les IBAN sont ceux que les banques publient comme exemples.",
+  "tools/faire_releve_exemple.py transforme ce fichier en PDF vectoriel,",
+  "les tests verifient que extract_releve.py en retrouve exactement le",
+  "contenu decrit ici.",
+  "",
+  "Une reserve : dans cette police en gras, le glyphe du chiffre 0 et",
+  "celui de la lettre O ont pratiquement le meme trace. Le plus proche",
+  "voisin tranche de justesse, et peut se tromper -- les tests comparent",
+  "donc les libelles a O et 0 confondus. Les champs numeriques, eux, sont",
+  "lus sans ambiguite : le parseur y force la lecture en chiffre."
+ ],
+ "titulaire": "Dupont Jean",
+ "adresse": [
+  "RUE DE L'EXEMPLE   12",
+  "1000  BRUXELLES"
+ ],
+ "compte": "BE68 5390 0754 7034",
+ "date_releve": "31-07-2026",
+ "solde_initial": {
+  "date": "01-07-2026",
+  "montant": 1234.56
+ },
+ "solde_final": {
+  "date": "31-07-2026",
+  "heure": "23:59",
+  "montant": 1195.19
+ },
+ "operations": [
+  {
+   "numero": "0001",
+   "date": "02-07-2026",
+   "date_valeur": "02-07-2026",
+   "montant": -50.0,
+   "lignes": [
+    "ACHAT OPC (FONDS D'INVESTISSEMENT) POUR LE FLEX INVEST",
+    "PLAN 123456789 EFFECTUE LE 02-07-2026 AVEC N° ORDRE",
+    "EA00000000000001 EN DOSSIER TITRES 123-4567890-12"
+   ]
+  },
+  {
+   "numero": "0002",
+   "date": "02-07-2026",
+   "date_valeur": "02-07-2026",
+   "montant": -50.0,
+   "lignes": [
+    "ACHAT OPC (FONDS D'INVESTISSEMENT) POUR LE FLEX INVEST",
+    "PLAN 123456789 EFFECTUE LE 02-07-2026 AVEC N° ORDRE",
+    "EA00000000000002 EN DOSSIER TITRES 123-4567890-12"
+   ]
+  },
+  {
+   "numero": "0003",
+   "date": "02-07-2026",
+   "date_valeur": "02-07-2026",
+   "montant": -50.0,
+   "lignes": [
+    "ACHAT OPC (FONDS D'INVESTISSEMENT) POUR LE FLEX INVEST",
+    "PLAN 123456789 EFFECTUE LE 02-07-2026 AVEC N° ORDRE",
+    "EA00000000000003 EN DOSSIER TITRES 123-4567890-12"
+   ]
+  },
+  {
+   "numero": "0004",
+   "date": "02-07-2026",
+   "date_valeur": "02-07-2026",
+   "montant": -50.0,
+   "lignes": [
+    "ACHAT OPC (FONDS D'INVESTISSEMENT) POUR LE FLEX INVEST",
+    "PLAN 123456789 EFFECTUE LE 02-07-2026 AVEC N° ORDRE",
+    "EA00000000000004 EN DOSSIER TITRES 123-4567890-12"
+   ]
+  },
+  {
+   "numero": "0005",
+   "date": "03-07-2026",
+   "date_valeur": "03-07-2026",
+   "montant": -12.4,
+   "lignes": [
+    "BANCONTACT - ACHAT - SUPERMARCHE EXEMPLE - 1000",
+    "BRUXELLES BE - 03/07/26 12:14 - SANS CONTACT VIA",
+    "WALLET - CARTE 6703 12XX XXXX 3456 - DUPONT JEAN"
+   ]
+  },
+  {
+   "numero": "0006",
+   "date": "04-07-2026",
+   "date_valeur": "04-07-2026",
+   "montant": -35.0,
+   "lignes": [
+    "VOTRE DOMICILIATION EUROPEENNE 987654321 POUR",
+    "OPERATEUR TELECOM EXEMPLE COMMUNICATION :",
+    "+++123/4567/89012+++ REFERENCE DU CREANCIER :",
+    "FT2026070400123"
+   ]
+  },
+  {
+   "numero": "0007",
+   "date": "06-07-2026",
+   "date_valeur": "06-07-2026",
+   "montant": -600.0,
+   "lignes": [
+    "ORDRE PERMANENT 12345678 POUR BE71 0961 2345 6769",
+    "AGENCE IMMOBILIERE EXEMPLE COMMUNICATION : LOYER",
+    "JUILLET 2026"
+   ]
+  },
+  {
+   "numero": "0008",
+   "date": "07-07-2026",
+   "date_valeur": "07-07-2026",
+   "montant": -18.99,
+   "lignes": [
+    "PAIEMENT DEBITMASTERCARD VIA WALLET 07/07 SERVICE",
+    "EXEMPLE 18,99 EUR - CARTE 6703 12XX XXXX 3456 -",
+    "DUPONT JEAN"
+   ]
+  },
+  {
+   "numero": "0009",
+   "date": "08-07-2026",
+   "date_valeur": "08-07-2026",
+   "montant": -70.0,
+   "lignes": [
+    "BANCONTACT - RETRAIT D'ESPECES - 1000_BRUXELLES -",
+    "1000 BRUXELLES BE - 08/07/26 18:02 - CARTE 6703",
+    "12XX XXXX 3456 - DUPONT JEAN"
+   ]
+  },
+  {
+   "numero": "0010",
+   "date": "09-07-2026",
+   "date_valeur": "09-07-2026",
+   "montant": -24.5,
+   "lignes": [
+    "VIREMENT MOBILE VERS BE62 5100 0754 7061 MARTIN",
+    "SOPHIE COMMUNICATION : REPAS DU SAMEDI"
+   ]
+  },
+  {
+   "numero": "0011",
+   "date": "10-07-2026",
+   "date_valeur": "10-07-2026",
+   "montant": -8.25,
+   "lignes": [
+    "APP BANCONTACT OU APP MOBILE - MARTIN SOPHIE"
+   ]
+  },
+  {
+   "numero": "0012",
+   "date": "13-07-2026",
+   "date_valeur": "13-07-2026",
+   "montant": -3.75,
+   "lignes": [
+    "PARTICIPATION AUX FRAIS DE GESTION DE VOTRE COMPTE",
+    "DU 01-04-2026 AU 30-06-2026"
+   ]
+  },
+  {
+   "numero": "0013",
+   "date": "15-07-2026",
+   "date_valeur": "15-07-2026",
+   "montant": -156.78,
+   "lignes": [
+    "RELEVE MASTERCARD NUMERO 123",
+    "DECOMPTE DU 30-06-2026"
+   ]
+  },
+  {
+   "numero": "0014",
+   "date": "16-07-2026",
+   "date_valeur": "16-07-2026",
+   "montant": -42.3,
+   "lignes": [
+    "VIREMENT INSTANTANE MOBILE VERS BE43 0689 9999",
+    "9501 ASSOCIATION EXEMPLE",
+    "COMMUNICATION : COTISATION ANNUELLE 2026-2027",
+    "REFERENCE DU CREANCIER : COT2026000042"
+   ]
+  },
+  {
+   "numero": "0015",
+   "date": "17-07-2026",
+   "date_valeur": "17-07-2026",
+   "montant": -15.0,
+   "lignes": [
+    "VIREMENT VIA WERO MOBILE VERS BE62 5100 0754",
+    "7061 MARTIN SOPHIE"
+   ]
+  },
+  {
+   "numero": "0016",
+   "date": "20-07-2026",
+   "date_valeur": "20-07-2026",
+   "montant": -89.9,
+   "lignes": [
+    "VOTRE DOMICILIATION EUROPEENNE 123456789 POUR BASIC-",
+    "FIT BRUXELLES EXEMPLE COMMUNICATION : 20-07-2026 /",
+    "20-08-2026 REFERENCE DU CREANCIER : NO123456789-1"
+   ]
+  },
+  {
+   "numero": "0017",
+   "date": "24-07-2026",
+   "date_valeur": "24-07-2026",
+   "montant": 2450.0,
+   "lignes": [
+    "VERSEMENT DE BE71 0961 2345 6769 EMPLOYEUR EXEMPLE /A/",
+    "APPOINTEMENTS 24-07-2026 TI-01 000123 000456"
+   ]
+  },
+  {
+   "numero": "0018",
+   "date": "27-07-2026",
+   "date_valeur": "27-07-2026",
+   "montant": 21.5,
+   "lignes": [
+    "VERSEMENT INSTANTANE DE BE62 5100 0754 7061 MARTIN",
+    "SOPHIE VERS BE68 5390 0754 7034 DUPONT JEAN"
+   ]
+  },
+  {
+   "numero": "0019",
+   "date": "29-07-2026",
+   "date_valeur": "29-07-2026",
+   "montant": -1234.0,
+   "lignes": [
+    "VIREMENT MOBILE VERS BE43 0689 9999 9501 DUPONT",
+    "JEAN COMMUNICATION : EPARGNE"
+   ]
+  }
+ ]
+}

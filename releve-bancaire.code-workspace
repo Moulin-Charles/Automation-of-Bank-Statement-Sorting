@@ -1,0 +1,10 @@
+{
+  "folders": [{ "path": "." }],
+  "settings": {
+    "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+    "python.terminal.activateEnvironment": true
+  },
+  "extensions": {
+    "recommendations": ["ms-python.python", "GrapeCity.gc-excelviewer"]
+  }
+}

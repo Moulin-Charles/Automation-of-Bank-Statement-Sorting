@@ -1,0 +1,45 @@
+{
+  "_lisez_moi": [
+    "Regles de pre-remplissage utilisees par preremplir_budget.py.",
+    "Ce fichier est un EXEMPLE, versionne : il montre la forme des regles et",
+    "sert de repli. Vos regles a vous, qui decrivent vos depenses reelles,",
+    "vont dans regles_categories.local.json, que .gitignore tient hors du",
+    "depot ; le script le prefere automatiquement s'il existe.",
+    "",
+    "Elles sont evaluees DANS L'ORDRE : la premiere qui correspond gagne.",
+    "'motif' est une expression reguliere testee (sans accent, en majuscules) sur",
+    "  Type | Contrepartie | Communication  de la ligne du releve.",
+    "Champs possibles :",
+    "  ignorer   : true  -> la transaction n'est pas reportee (transfert interne, salaire...)",
+    "  agreger   : true  -> les lignes du meme jour couvertes par cette regle sont fusionnees",
+    "  verifier  : true  -> la categorie est un pari, la description recoit ' (?)'",
+    "  large     : true  -> chercher aussi dans la Description complete (ville, n° de",
+    "                       carte et titulaire y figurent : source de faux positifs)",
+    "  montants  : affine selon le montant exact, avec un repli 'defaut'",
+    "  {contrepartie} dans une description est remplace par le nom du beneficiaire",
+    "Ajoutez vos propres regles : le script signale toute categorie inconnue."
+  ],
+
+  "regles": [
+    { "motif": "^SOLDE (INITIAL|FINAL)", "ignorer": true, "raison": "ligne technique du releve" },
+    { "motif": "^(VIREMENT|VERSEMENT)[A-Z ]*\\| VOTRE NOM", "ignorer": true, "raison": "transfert entre comptes perso" },
+    { "motif": "\\| VOTRE EMPLOYEUR", "ignorer": true, "raison": "salaire" },
+    { "motif": "^VERSEMENT [A-Z ]*RECU", "description": "Remboursement {contrepartie}", "categorie": "À CLASSER", "verifier": true },
+
+    { "motif": "ACHAT OPC|FLEX INVEST", "description": "Investissement", "categorie": "Investissement", "agreger": true },
+    { "motif": "FRAIS DE GESTION|GESTION DE VOTRE COMPTE", "description": "Frais Compte", "categorie": "Abonnements" },
+    { "motif": "RELEVE MASTERCARD", "description": "Débit Mastercard", "categorie": "Grosse dépense ponctuelle", "verifier": true },
+
+    { "motif": "CARREFOUR|DELHAIZE|COLRUYT|ALDI|LIDL", "description": "Courses", "categorie": "Courses" },
+    { "motif": "PHARMACIE", "description": "Pharmacie", "categorie": "Santé non remboursée" },
+    { "motif": "RETRAIT D.ESPECES", "large": true, "description": "Retrait espèces", "categorie": "Divers quotidien", "verifier": true },
+
+    {
+      "motif": "OPERATEUR TELECOM",
+      "montants": {
+        "35.00": { "description": "Abonnement mobile", "categorie": "Abonnements" },
+        "defaut": { "description": "Télécom", "categorie": "Abonnements", "verifier": true }
+      }
+    }
+  ]
+}

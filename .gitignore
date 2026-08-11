@@ -1,0 +1,30 @@
+# --- donnees reelles : rien de tout cela ne doit entrer dans l'historique ---
+# Git conserve tout : un fichier commite puis supprime reste dans l'historique.
+# Les seules exceptions sont les fixtures de test, entierement inventees.
+*.pdf
+!tests/data/releve_exemple.pdf
+*.xlsx
+!tests/data/*.xlsx
+*.sauvegarde-*.xlsx
+regles_categories.local.json
+
+# --- environnement Python ---
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# --- outillage ---
+.pytest_cache/
+.coverage
+htmlcov/
+
+# --- systeme ---
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# --- fichiers de explication ---
+docs/
